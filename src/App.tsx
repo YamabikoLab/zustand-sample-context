@@ -5,7 +5,7 @@ import Counter from "./components/Counter";
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1>Counter</h1>
+      <h1>カウンター</h1>
       <Counter />
     </div>
   );
