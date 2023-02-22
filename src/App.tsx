@@ -1,20 +1,20 @@
 import React from "react";
 import "./App.css";
 import Counter from "./components/Counter";
-import { MyProvider } from "./store/useMyStore";
+import { CounterProvider } from "./store/useCounterStore";
 
 function App(): JSX.Element {
   return (
     <div className="App">
       <h1>Subscribeパターン</h1>
-      <h1>First Counter</h1>
-      <MyProvider>
+      <h1>カウンター1</h1>
+      <CounterProvider>
         <Counter />
-      </MyProvider>
-      <h1>Second Counter</h1>
-      <MyProvider>
+      </CounterProvider>
+      <h1>カウンター2</h1>
+      <CounterProvider>
         <Counter />
-      </MyProvider>
+      </CounterProvider>
     </div>
   );
 }
