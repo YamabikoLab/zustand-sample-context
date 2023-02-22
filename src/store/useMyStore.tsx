@@ -14,12 +14,14 @@ interface MyAction {
 export type MyStore = MyState & MyAction;
 
 const createMyStore = (): StoreApi<MyStore> =>
-  createStore<MyStore>((set) => ({
-    count: 0,
-    inc: () => {
-      set((state) => ({ count: state.count + 1 }));
-    },
-  }));
+  createStore<MyStore>()(
+    devtools((set) => ({
+      count: 0,
+      inc: () => {
+        set((state) => ({ count: state.count + 1 }));
+      },
+    }))
+  );
 
 const MyContext = createContext<ReturnType<typeof createMyStore> | null>(null);
 
