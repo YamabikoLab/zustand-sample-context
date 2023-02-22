@@ -1,6 +1,7 @@
 import React from "react";
 import { createContext, type ReactNode, useContext } from "react";
 import { createStore, type StoreApi, useStore } from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface MyState {
   count: number;
@@ -37,4 +38,12 @@ export const useMyStore = (): MyStore => {
     throw new Error("no provider");
   }
   return useStore(store);
+};
+
+export const useMyStoreApi = (): StoreApi<MyStore> => {
+  const store = useContext(MyContext);
+  if (store === null) {
+    throw new Error("no provider");
+  }
+  return store;
 };
