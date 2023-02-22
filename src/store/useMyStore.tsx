@@ -1,6 +1,7 @@
 import React from "react";
 import { createContext, type ReactNode, useContext } from "react";
 import { createStore, type StoreApi, useStore } from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface MyState {
   count: number;
@@ -13,12 +14,14 @@ interface MyAction {
 export type MyStore = MyState & MyAction;
 
 const createMyStore = (): StoreApi<MyStore> =>
-  createStore<MyStore>((set) => ({
-    count: 0,
-    inc: () => {
-      set((state) => ({ count: state.count + 1 }));
-    },
-  }));
+  createStore<MyStore>()(
+    devtools((set) => ({
+      count: 0,
+      inc: () => {
+        set((state) => ({ count: state.count + 1 }));
+      },
+    }))
+  );
 
 const MyContext = createContext<ReturnType<typeof createMyStore> | null>(null);
 
