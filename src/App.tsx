@@ -5,6 +5,7 @@ import Counter from "./components/Counter";
 function App(): JSX.Element {
   return (
     <div className="App">
+      <h1>NGパターン</h1>
       <h1>First Counter</h1>
       <Counter />
       <h1>Second Counter</h1>
