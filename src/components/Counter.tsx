@@ -1,8 +1,12 @@
 import React from "react";
-import { useMyStore } from "../store/useMyStore";
+import { useMyStore, useMyStoreApi } from "../store/useMyStore";
 
 const Counter = (): JSX.Element => {
   const { count, inc } = useMyStore();
+  const store = useMyStoreApi();
+  store.subscribe(() => {
+    console.log("count is changed", store.getState().count);
+  });
 
   return (
     <div>

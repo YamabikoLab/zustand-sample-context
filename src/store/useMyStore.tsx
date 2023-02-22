@@ -38,3 +38,11 @@ export const useMyStore = (): MyStore => {
   }
   return useStore(store);
 };
+
+export const useMyStoreApi = (): StoreApi<MyStore> => {
+  const store = useContext(MyContext);
+  if (store === null) {
+    throw new Error("no provider");
+  }
+  return store;
+};
