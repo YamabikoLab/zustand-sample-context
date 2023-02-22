@@ -1,12 +1,18 @@
 import React from "react";
-import { useMyStore } from "../store/useMyStore";
+import { useCounterStore } from "../store/useCounterStore";
 
 const Counter = (): JSX.Element => {
-  const { count, inc } = useMyStore();
+  const { count, increase, decrease } = useCounterStore();
 
   return (
     <div>
-      {count} <button onClick={inc}>+1</button>
+      {count}
+      <button type="button" onClick={increase}>
+        +1
+      </button>
+      <button type="button" onClick={decrease}>
+        -1
+      </button>
     </div>
   );
 };
