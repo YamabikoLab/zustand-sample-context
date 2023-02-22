@@ -6,15 +6,13 @@ const Counter = (): JSX.Element => {
 
   return (
     <div>
-      <h1>{count}</h1>
-      <div>
-        <button type="button" onClick={increase}>
-          +1
-        </button>
-        <button type="button" onClick={decrease}>
-          -1
-        </button>
-      </div>
+      {count}
+      <button type="button" onClick={increase}>
+        +1
+      </button>
+      <button type="button" onClick={decrease}>
+        -1
+      </button>
     </div>
   );
 };
