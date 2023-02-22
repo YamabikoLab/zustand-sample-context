@@ -1,14 +1,19 @@
 import React from "react";
 import "./App.css";
 import Counter from "./components/Counter";
+import { MyProvider } from "./store/useMyStore";
 
 function App(): JSX.Element {
   return (
     <div className="App">
       <h1>First Counter</h1>
-      <Counter />
+      <MyProvider>
+        <Counter />
+      </MyProvider>
       <h1>Second Counter</h1>
-      <Counter />
+      <MyProvider>
+        <Counter />
+      </MyProvider>
     </div>
   );
 }
