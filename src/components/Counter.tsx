@@ -1,5 +1,5 @@
 import React from "react";
-import useMyStore from "../store/useMyStore";
+import { useMyStore } from "../store/useMyStore";
 
 const Counter = (): JSX.Element => {
   const { count, inc } = useMyStore();
