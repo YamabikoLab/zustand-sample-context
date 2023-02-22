@@ -6,7 +6,7 @@ import { MyProvider } from "./store/useMyStore";
 function App(): JSX.Element {
   return (
     <div className="App">
-      <h1>Subscribeパターン</h1>
+      <h1>devtoolsパターン</h1>
       <h1>First Counter</h1>
       <MyProvider>
         <Counter />
